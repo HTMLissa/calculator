@@ -23,6 +23,11 @@ body {
   align-items: center;
 }
 
+.result {
+  font-size: 2rem;
+  margin-right: 20px;
+}
+
 .operations-container {
   display: flex;
   flex-direction: column;
