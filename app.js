@@ -28,3 +28,11 @@ function operate(operator, num1, num2) {
 }
 
 // Create the functions that populate the display when you click the number buttons. You should be storing the ‘display value’ in a variable somewhere for use in the next step.
+let numberButtons = document.querySelectorAll(".numeric");
+let result = document.querySelector(".result");
+
+numberButtons.forEach((num) => {
+  num.addEventListener("click", function () {
+    result.textContent += num.getAttribute("data-value");
+  });
+});
