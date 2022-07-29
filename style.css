@@ -17,6 +17,10 @@ body {
   height: 100px;
   margin-bottom: 20px;
   background: rgb(143, 142, 142);
+  font-family: "Cairo", sans-serif;
+  display: flex;
+  justify-content: right;
+  align-items: center;
 }
 
 .operations-container {
