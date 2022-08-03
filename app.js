@@ -20,7 +20,8 @@ let divide = function (x, y) {
   return x / y;
 };
 
-let value1, value2, chosenOperator, result;
+let value1, value2, chosenOperator;
+let result = 0;
 
 // Create a new function "operate" that takes an operator and 2 numbers and then calls one of the above functions on the numbers
 
@@ -36,6 +37,18 @@ let resultDisplay = document.querySelector(".result");
 numberButtons.forEach((num) => {
   num.addEventListener("click", function () {
     resultDisplay.textContent += num.getAttribute("data-value");
+    value1 = parseInt(resultDisplay.textContent);
+    if (chosenOperator == "add") {
+      result = operate(add, result, value1);
+    } else if (chosenOperator == "subtract") {
+      result = operate(subtract, result, value1);
+    } else if (chosenOperator == "multiply") {
+      result = operate(multiply, result, value1);
+    } else if (chosenOperator == "divide") {
+      result = operate(divide, result, value1);
+    } else {
+      result = value1;
+    }
   });
 });
 
@@ -45,22 +58,11 @@ let equalButton = document.querySelector(".equal");
 
 operatorButtons.forEach((operator) => {
   operator.addEventListener("click", function () {
-    value1 = parseInt(resultDisplay.textContent);
     chosenOperator = operator.getAttribute("data-value");
     resultDisplay.textContent = "";
   });
 });
 
 equalButton.addEventListener("click", function () {
-  value2 = parseInt(resultDisplay.textContent);
-  if (chosenOperator == "add") {
-    result = operate(add, value1, value2);
-  } else if (chosenOperator == "subtract") {
-    result = operate(subtract, value1, value2);
-  } else if (chosenOperator == "multiply") {
-    result = operate(multiply, value1, value2);
-  } else if (chosenOperator == "divide") {
-    result = operate(divide, value1, value2);
-  }
   resultDisplay.textContent = result;
 });
