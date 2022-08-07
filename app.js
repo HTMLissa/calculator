@@ -30,7 +30,8 @@ function operate(operator, num1, num2) {
   return result;
 }
 
-// Create the functions that populate the display when you click the number buttons. You should be storing the ‘display value’ in a variable somewhere for use in the next step.
+// Create a functions that populate the display when you click the number buttons
+
 let numberButtons = document.querySelectorAll(".numeric");
 let resultDisplay = document.querySelector(".result");
 
@@ -55,7 +56,7 @@ numberButtons.forEach((num) => {
   });
 });
 
-// Make the calculator work!
+// Add functionality to the operator buttons
 let operatorButtons = document.querySelectorAll(".operator");
 let equalButton = document.querySelector(".equal");
 
@@ -72,4 +73,14 @@ operatorButtons.forEach((operator) => {
 
 equalButton.addEventListener("click", function () {
   resultDisplay.textContent = result;
+});
+
+// Add functionality to clear calculator display
+
+let clearButton = document.querySelector(".clear-Btn");
+
+clearButton.addEventListener("click", function () {
+  result = 0;
+  chosenOperator = undefined;
+  resultDisplay.textContent = "";
 });
