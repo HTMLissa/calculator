@@ -36,6 +36,9 @@ let resultDisplay = document.querySelector(".result");
 
 numberButtons.forEach((num) => {
   num.addEventListener("click", function () {
+    if (chosenOperator) {
+      resultDisplay.textContent = "";
+    }
     resultDisplay.textContent += num.getAttribute("data-value");
     value1 = parseInt(resultDisplay.textContent);
     if (chosenOperator == "add") {
@@ -58,8 +61,12 @@ let equalButton = document.querySelector(".equal");
 
 operatorButtons.forEach((operator) => {
   operator.addEventListener("click", function () {
+    if (chosenOperator) {
+      resultDisplay.textContent = result;
+    } else {
+      resultDisplay.textContent = "";
+    }
     chosenOperator = operator.getAttribute("data-value");
-    resultDisplay.textContent = "";
   });
 });
 
