@@ -20,7 +20,7 @@ let divide = function (x, y) {
   return x / y;
 };
 
-let value1, value2, chosenOperator;
+let value1, chosenOperator;
 let result = 0;
 
 // Create a new function "operate" that takes an operator and 2 numbers and then calls one of the above functions on the numbers
@@ -37,24 +37,28 @@ let resultDisplay = document.querySelector(".result");
 
 numberButtons.forEach((num) => {
   num.addEventListener("click", function () {
-    if (chosenOperator) {
+    if (chosenOperator && resultDisplay.textContent == result) {
       resultDisplay.textContent = "";
     }
     resultDisplay.textContent += num.getAttribute("data-value");
     value1 = parseInt(resultDisplay.textContent);
-    if (chosenOperator == "add") {
-      result = operate(add, result, value1);
-    } else if (chosenOperator == "subtract") {
-      result = operate(subtract, result, value1);
-    } else if (chosenOperator == "multiply") {
-      result = operate(multiply, result, value1);
-    } else if (chosenOperator == "divide") {
-      result = operate(divide, result, value1);
-    } else {
-      result = value1;
-    }
   });
 });
+
+function calculate() {
+  if (chosenOperator == "add") {
+    result = operate(add, result, value1);
+  } else if (chosenOperator == "subtract") {
+    result = operate(subtract, result, value1);
+  } else if (chosenOperator == "multiply") {
+    result = operate(multiply, result, value1);
+  } else if (chosenOperator == "divide") {
+    result = operate(divide, result, value1);
+  } else {
+    result = value1;
+  }
+  return result;
+}
 
 // Add functionality to the operator buttons
 let operatorButtons = document.querySelectorAll(".operator");
@@ -62,16 +66,19 @@ let equalButton = document.querySelector(".equal");
 
 operatorButtons.forEach((operator) => {
   operator.addEventListener("click", function () {
+    calculate();
     if (chosenOperator) {
       resultDisplay.textContent = result;
     } else {
       resultDisplay.textContent = "";
     }
     chosenOperator = operator.getAttribute("data-value");
+    value1 = 0;
   });
 });
 
 equalButton.addEventListener("click", function () {
+  calculate();
   resultDisplay.textContent = result;
 });
 
