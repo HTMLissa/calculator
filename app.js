@@ -45,15 +45,17 @@ numberButtons.forEach((num) => {
   });
 });
 
+// Perform an operation selected by the user and display the result rounded to 7 decimal places (using .toFixed)
+
 function calculate() {
   if (chosenOperator == "add") {
-    result = operate(add, result, value1);
+    result = operate(add, result, value1).toFixed(7);
   } else if (chosenOperator == "subtract") {
-    result = operate(subtract, result, value1);
+    result = operate(subtract, result, value1).toFixed(7);
   } else if (chosenOperator == "multiply") {
-    result = operate(multiply, result, value1);
+    result = operate(multiply, result, value1).toFixed(7);
   } else if (chosenOperator == "divide") {
-    result = operate(divide, result, value1);
+    result = operate(divide, result, value1).toFixed(7);
   } else {
     result = value1;
   }
