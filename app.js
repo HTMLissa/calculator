@@ -97,3 +97,10 @@ clearButton.addEventListener("click", function () {
   chosenOperator = undefined;
   resultDisplay.textContent = "";
 });
+
+// Add functionality to delete input made by the user
+let deleteButton = document.querySelector(".delete-Btn");
+
+deleteButton.addEventListener("click", function () {
+  resultDisplay.textContent = resultDisplay.textContent.slice(0, -1);
+});
