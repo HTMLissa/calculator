@@ -49,15 +49,18 @@ numberButtons.forEach((num) => {
 
 function calculate() {
   if (chosenOperator == "add") {
-    result = operate(add, result, value1).toFixed(7);
+    result = operate(add, result, value1);
   } else if (chosenOperator == "subtract") {
-    result = operate(subtract, result, value1).toFixed(7);
+    result = operate(subtract, result, value1);
   } else if (chosenOperator == "multiply") {
-    result = operate(multiply, result, value1).toFixed(7);
+    result = operate(multiply, result, value1);
   } else if (chosenOperator == "divide") {
-    result = operate(divide, result, value1).toFixed(7);
+    result = operate(divide, result, value1);
   } else {
     result = value1;
+  }
+  if (result.toString().length > 7) {
+    result = result.toFixed(7);
   }
   return result;
 }
