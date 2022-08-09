@@ -61,6 +61,7 @@ function calculate() {
 }
 
 // Add functionality to the operator buttons
+
 let operatorButtons = document.querySelectorAll(".operator");
 let equalButton = document.querySelector(".equal");
 
