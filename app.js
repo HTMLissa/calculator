@@ -93,16 +93,16 @@ equalButton.addEventListener("click", function () {
 
 let clearButton = document.querySelector(".clear-Btn");
 
-clearButton.addEventListener("click", function () {
-  clearAll();
-});
-
 function clearAll() {
   result = 0;
   chosenOperator = undefined;
   resultDisplay.textContent = "";
   decimalPointButton.style.pointerEvents = "auto";
 }
+
+clearButton.addEventListener("click", function () {
+  clearAll();
+});
 
 // Adding functionality to delete input made by the user
 let deleteButton = document.querySelector(".delete-Btn");
@@ -124,19 +124,6 @@ let powerButton = document.querySelector(".power-Btn");
 let displayScreen = document.querySelector(".screen");
 let allButtons = document.querySelectorAll(".col");
 let powerOn = false;
-disableButtons();
-
-powerButton.addEventListener("click", function () {
-  if (!powerOn) {
-    displayScreen.style.backgroundColor = "#87b37a";
-    enableButtons();
-    powerOn = true;
-  } else {
-    displayScreen.style.backgroundColor = "#77867f";
-    disableButtons();
-    powerOn = false;
-  }
-});
 
 function disableButtons() {
   allButtons.forEach((button) => {
@@ -154,3 +141,17 @@ function enableButtons() {
     button.style.opacity = "1";
   });
 }
+
+disableButtons();
+
+powerButton.addEventListener("click", function () {
+  if (!powerOn) {
+    displayScreen.style.backgroundColor = "#87b37a";
+    enableButtons();
+    powerOn = true;
+  } else {
+    displayScreen.style.backgroundColor = "#77867f";
+    disableButtons();
+    powerOn = false;
+  }
+});
