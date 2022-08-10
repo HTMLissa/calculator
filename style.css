@@ -98,3 +98,12 @@ body {
 .delete-Btn:hover {
   background-color: rgb(122, 42, 42);
 }
+
+.power-Btn {
+  background-color: #048ba8;
+  color: white;
+}
+
+.power-Btn:hover {
+  background-color: #005366;
+}
