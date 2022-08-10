@@ -41,7 +41,7 @@ numberButtons.forEach((num) => {
       resultDisplay.textContent = "";
     }
     resultDisplay.textContent += num.getAttribute("data-value");
-    value1 = parseInt(resultDisplay.textContent);
+    value1 = parseFloat(resultDisplay.textContent);
   });
 });
 
@@ -80,6 +80,7 @@ operatorButtons.forEach((operator) => {
     }
     chosenOperator = operator.getAttribute("data-value");
     value1 = 0;
+    decimalPointButton.style.pointerEvents = "auto";
   });
 });
 
@@ -96,6 +97,7 @@ clearButton.addEventListener("click", function () {
   result = 0;
   chosenOperator = undefined;
   resultDisplay.textContent = "";
+  decimalPointButton.style.pointerEvents = "auto";
 });
 
 // Add functionality to delete input made by the user
@@ -103,4 +105,13 @@ let deleteButton = document.querySelector(".delete-Btn");
 
 deleteButton.addEventListener("click", function () {
   resultDisplay.textContent = resultDisplay.textContent.slice(0, -1);
+});
+
+// Add functionality to decimal point button
+let decimalPointButton = document.querySelector(".decimal-point");
+let decimalButtonPushed = false;
+
+decimalPointButton.addEventListener("click", function () {
+  resultDisplay.textContent += decimalPointButton.getAttribute("data-value");
+  decimalPointButton.style.pointerEvents = "none";
 });
