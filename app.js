@@ -96,6 +96,7 @@ operatorButtons.forEach((operator) => {
 equalButton.addEventListener("click", function () {
   calculate();
   resultDisplay.textContent = result;
+  value1 = 0;
 });
 
 // Adding functionality to clear calculator display
@@ -104,6 +105,7 @@ let clearButton = document.querySelector(".clear-Btn");
 
 function clearAll() {
   result = 0;
+  value1 = 0;
   chosenOperator = undefined;
   resultDisplay.textContent = "";
   decimalPointButton.style.pointerEvents = "auto";
