@@ -42,8 +42,17 @@ numberButtons.forEach((num) => {
     }
     resultDisplay.textContent += num.getAttribute("data-value");
     value1 = parseFloat(resultDisplay.textContent);
+    clickButton(num);
   });
 });
+
+// Creating function to change background-color of button, when clicked
+function clickButton(button) {
+  button.classList.add("button-clicked");
+  setInterval(function () {
+    button.classList.remove("button-clicked");
+  }, 500);
+}
 
 // Performing an operation selected by the user and display the result rounded to 7 decimal places (using .toFixed)
 

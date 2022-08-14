@@ -63,7 +63,7 @@ body {
 }
 
 .numeric:hover {
-  background-color: rgb(158, 152, 152);
+  /* background-color: rgb(158, 152, 152); */
 }
 
 .clear-Btn {
@@ -111,4 +111,10 @@ body {
 
 .power-Btn:hover {
   background-color: #005366;
+}
+
+/* JS Styles */
+
+.button-clicked {
+  background-color: grey;
 }
