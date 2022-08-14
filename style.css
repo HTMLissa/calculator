@@ -55,6 +55,7 @@ body {
   height: 80px;
   border-radius: 3px;
   font-size: 1.7rem;
+  cursor: pointer;
 }
 
 .numeric {
