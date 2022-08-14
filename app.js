@@ -51,7 +51,7 @@ function clickButton(button) {
   button.classList.add("button-clicked");
   setInterval(function () {
     button.classList.remove("button-clicked");
-  }, 500);
+  }, 100);
 }
 
 // Performing an operation selected by the user and display the result rounded to 7 decimal places (using .toFixed)
