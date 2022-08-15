@@ -62,10 +62,6 @@ body {
   transition: 0.2s ease-out;
 }
 
-.numeric:hover {
-  /* background-color: rgb(158, 152, 152); */
-}
-
 .clear-Btn {
   background-color: #4b296b;
   color: white;
